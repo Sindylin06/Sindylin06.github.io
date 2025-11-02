@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lin.的個人網站</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
 
@@ -56,11 +57,20 @@
       border-radius: 10px;
       font-weight: 500;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
     }
 
     .links a:hover {
       background-color: #4338ca;
       transform: translateY(-2px);
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 0.95em;
+      color: #6b7280;
+      display: none;
+      animation: fadeIn 0.5s ease;
     }
 
     @keyframes fadeIn {
@@ -71,11 +81,24 @@
 </head>
 <body>
   <div class="card">
-    <h1>哈囉~我是Lin.🐧</h1>
+    <h1>哈囉!我是Lin.🐧</h1>
     <p>熱愛前端開發與設計美感，<br>這是我的 GitHub 個人網站。</p>
     <div class="links">
-      <a href="https://github.com/Sindylin06" target="_blank">前往 GitHub</a>
+      <a id="github-btn" href="#">這是我的 GitHub 個人網站</a>
     </div>
+    <div class="message" id="message">正在前往 GitHub...</div>
   </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#github-btn").click(function(e){
+        e.preventDefault(); // 防止立即跳轉
+        $("#message").fadeIn(300).delay(800).fadeOut(500);
+        setTimeout(function(){
+          window.open("https://github.com/Sindylin06", "_blank");
+        }, 1000);
+      });
+    });
+  </script>
 </body>
 </html>
