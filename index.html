@@ -5,39 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>郁萱的個人網站</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
     body {
-      font-family: "微軟正黑體", sans-serif;
-      background-color: #f9fafb;
-      color: #333;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    h1 {
-      color: #4f46e5;
-    }
+
     .card {
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      width: 400px;
-      margin: 30px auto;
-      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      width: 90%;
+      max-width: 400px;
+      padding: 40px 35px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.8s ease;
     }
-    a {
-      color: #4f46e5;
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      color: #1e3a8a;
+      font-size: 1.9em;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #4b5563;
+      font-size: 1.05em;
+      margin: 8px 0 28px;
+      line-height: 1.6;
+    }
+
+    .links a {
+      display: inline-block;
+      background-color: #4f46e5;
+      color: white;
       text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .links a:hover {
+      background-color: #4338ca;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <h1>哈囉!我是Lin. </h1>
   <div class="card">
-    <p>歡迎來到我的 GitHub 個人網站！</p>
-    <p>我喜歡學習前端技術，也會用 Git、Ajax、jQuery。</p>
-    <p>👉 <a href="https://github.com/你的帳號">前往我的 GitHub</a></p>
+    <h1>哈囉，我是郁萱 👋</h1>
+    <p>熱愛前端開發與設計美感，<br>這是我的 GitHub 個人網站。</p>
+    <div class="links">
+      <a href="https://github.com/你的帳號" target="_blank">前往 GitHub</a>
+    </div>
   </div>
 </body>
 </html>
